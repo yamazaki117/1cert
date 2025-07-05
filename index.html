@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1cert - Your Phone is Your Key</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Lottie Player -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+
+    <!-- Waitforit Styles -->
+    <link rel="stylesheet" type="text/css" href="https://www.waitforit.me/wfiEmbedStyles.css">
+
+    <!-- Tailwind Config & Custom Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        /* Custom styles for modal state transitions */
+        .modal-overlay[data-state='closed'] {
+            @apply opacity-0 pointer-events-none;
+        }
+        .modal-overlay[data-state='open'] {
+            @apply opacity-100 pointer-events-auto;
+        }
+        .modal-overlay[data-state='closed'] .modal-content {
+            @apply scale-95;
+        }
+        .modal-overlay[data-state='open'] .modal-content {
+            @apply scale-100;
+        }
+        
+        /* Enhanced Lottie animation sizing for mobile */
+        #lottie-animation {
+            width: 100%;
+            height: 350px;
+        }
+        
+        @media (min-width: 640px) {
+            #lottie-animation {
+                height: 400px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            #lottie-animation {
+                height: 450px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            #lottie-animation {
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 font-sans text-neutral-100 antialiased">
+
+    <header class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800 bg-neutral-950/80 backdrop-blur-[10px]">
+        <div class="mx-auto flex max-w-[1100px] items-center justify-between px-6 py-5">
+            <a href="#" class="rounded-xl bg-zinc-900 px-2.5 py-1.5 text-2xl font-bold text-white no-underline border border-zinc-700/50 shadow-sm hover:border-zinc-600/60 transition-all duration-200">1cert<span class="text-[#10B981]">.</span></a>
+            <button class="js-open-modal-btn rounded-lg bg-gradient-to-r from-[#10B981] to-[#059669] px-4 py-2 text-sm font-semibold text-white no-underline transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(16,185,129,0.5)]">Join Waitlist</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="flex min-h-screen items-center justify-center pt-32 pb-10 md:pt-20">
+            <div class="mx-auto max-w-[1100px] px-6">
+                <div class="grid grid-cols-1 items-center gap-6 text lg:grid-cols-2 lg:gap-16 lg:text-left">
+                    <div class="lg:order-first">
+                        <h1 class="mb-6 bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-4xl font-black leading-[1.1] tracking-tighter text-transparent md:text-5xl lg:text-[3.5rem]">
+                            <span class="inline-block rounded-xl bg-gradient-to-r from-[#DC2626] to-[#B91C1C] px-4 py-2 text-white shadow-xl">X509</span> Anywhere <span class="bg-gradient-to-r from-[#10B981] to-[#34D399] bg-clip-text text-transparent">From Your Pocket.</span>
+                        </h1>
+                        <div class="mx-auto mb-10 grid max-w-md grid-cols-1 items-stretch gap-6 lg:mx-0 lg:max-w-none lg:grid-cols-[1fr_auto]">
+                            <p class="text-base leading-relaxed text-zinc-400 lg:text-lg">
+                                No more installing certificates on every machine. Your x509 cert stays safely on your phone while you authenticate to any server, service, or device with just a tap.
+                            </p>
+                            <button class="js-open-modal-btn group hidden w-full flex-col items-start justify-between gap-1 rounded-xl bg-gradient-to-r from-[#10B981] to-[#059669] px-4 py-1.5 text-sm font-semibold text-white no-underline transition-all duration-200 ease-in-out hover:-translate-y-1 hover:from-[#047857] hover:to-[#065F46] hover:shadow-[0_8px_30px_rgba(16,185,129,0.5)] sm:gap-2 sm:px-6 sm:py-3 sm:text-base lg:flex lg:w-fit lg:whitespace-nowrap">
+                                <span>Join the Waitlist</span>
+                                <span class="ml-auto inline-block transition-transform duration-200 ease-in-out group-hover:translate-x-1.5">→</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="group flex flex-col items-center justify-center [perspective:1000px] lg:order-last">
+                        <div class="w-full sm:rounded-2xl sm:bg-gradient-to-br sm:from-zinc-900/50 sm:to-zinc-800/30 sm:backdrop-blur-sm sm:border sm:border-zinc-700/20 sm:shadow-xl lg:bg-none lg:border-none lg:shadow-none lg:backdrop-blur-none">
+                            <div id="lottie-animation" class="transition-transform duration-500 ease group-hover:scale-105 group-hover:[transform:none] lg:[transform:rotateY(-10deg)_rotateX(5deg)]"></div>
+                        </div>
+                        <button class="js-open-modal-btn group mt-4 flex w-full flex-col items-start justify-between gap-1 rounded-xl bg-gradient-to-r from-[#10B981] to-[#059669] px-4 py-1.5 text-sm font-semibold text-white no-underline transition-all duration-200 ease-in-out hover:-translate-y-1 hover:from-[#047857] hover:to-[#065F46] hover:shadow-[0_8px_30px_rgba(16,185,129,0.5)] sm:gap-2 sm:px-6 sm:py-3 sm:text-base lg:hidden">
+                            <span>Join the Waitlist</span>
+                            <span class="ml-auto inline-block transition-transform duration-200 ease-in-out group-hover:translate-x-1.5">→</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-zinc-800 bg-neutral-950">
+        <div class="mx-auto flex max-w-[1100px] items-center justify-between px-6 py-6">
+            <div class="rounded-xl bg-zinc-900 px-2.5 py-1.5 text-lg font-bold text-white border border-zinc-700/50 shadow-sm">1cert<span class="text-[#10B981]">.</span></div>
+            <div class="text-sm text-zinc-400">© 2025</div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-md transition-opacity duration-300 ease-in-out" id="waitlist-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" data-state="closed">
+        <div class="modal-content relative w-fit max-w-[95vw] rounded-3xl border border-zinc-700/50 bg-[#1D1D1F]/90 backdrop-blur-xl shadow-2xl transition-transform duration-300 ease-in-out">
+            <header class="flex items-center justify-between border-b border-zinc-700/30 px-6 py-4">
+                <h2 id="modal-title" class="text-xl font-semibold text-neutral-100">Join the Waitlist</h2>
+                <button class="modal-close-btn rounded-full p-1 leading-none text-zinc-400 transition-colors duration-200 ease hover:bg-white/10 hover:text-neutral-100" aria-label="Close modal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </header>
+            <div class="p-6">
+                <!-- Waitforit.me embed goes here -->
+                <div id="waitforit-embed" data-project-id="dacb4980-959e-4da7-90fa-64b654059979"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+    <script src="https://www.waitforit.me/waitlistV3.bundle.js" async></script>
+    <script>
+        // Responsive Lottie Animation Setup
+        let lottieAnimation = null;
+        
+        const loadLottieAnimation = () => {
+            // Destroy existing animation if it exists
+            if (lottieAnimation) {
+                lottieAnimation.destroy();
+            }
+            
+            // Check if screen is large (1024px+) using window.innerWidth
+            const isLargeScreen = window.innerWidth >= 1024;
+            
+            // Use different animations based on screen size
+            const animationPath = isLargeScreen 
+                ? 'https://res.cloudinary.com/dunufio1l/raw/upload/v1751716721/cert_taneux.json'
+                : 'https://res.cloudinary.com/dunufio1l/raw/upload/v1751734747/trimmed-cert_qmifum.json';
+            
+            lottieAnimation = lottie.loadAnimation({
+                container: document.getElementById('lottie-animation'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: animationPath
+            });
+        };
+        
+        // Load animation initially
+        loadLottieAnimation();
+        
+        // Reload animation on window resize with debouncing
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                loadLottieAnimation();
+            }, 250);
+        });
+
+        // MODAL LOGIC
+        const modal = document.getElementById('waitlist-modal');
+        const openModalBtns = document.querySelectorAll('.js-open-modal-btn');
+        const closeModalBtn = modal.querySelector('.modal-close-btn');
+
+        const openModal = () => {
+            modal.dataset.state = 'open';
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeModal = () => {
+            modal.dataset.state = 'closed';
+            document.body.style.overflow = '';
+        };
+
+        openModalBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal();
+            });
+        });
+
+        closeModalBtn.addEventListener('click', closeModal);
+
+        // Close modal if user clicks on the overlay
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+        
+        // Close modal if user presses Escape key
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && modal.dataset.state === 'open') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
