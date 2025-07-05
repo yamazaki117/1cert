@@ -27,11 +27,92 @@
                     fontFamily: {
                         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
                     },
+                    colors: {
+                        'brand': {
+                            'primary-start': 'var(--color-primary-start)',
+                            'primary-end': 'var(--color-primary-end)',
+                            'primary-hover-start': 'var(--color-primary-hover-start)',
+                            'primary-hover-end': 'var(--color-primary-hover-end)',
+                            'secondary-start': 'var(--color-secondary-start)',
+                            'secondary-end': 'var(--color-secondary-end)',
+                            'accent-start': 'var(--color-accent-start)',
+                            'accent-end': 'var(--color-accent-end)',
+                            'logo': 'var(--color-logo)',
+                        }
+                    },
+                    boxShadow: {
+                        'brand-glow': 'var(--shadow-brand-glow)',
+                        'brand-glow-hover': 'var(--shadow-brand-glow-hover)',
+                    }
                 }
             }
         }
     </script>
     <style type="text/tailwindcss">
+        :root {
+            /* Balanced Indigo Primary with Green Accents */
+            --color-primary-start: #4F46E5;
+            --color-primary-end: #4338CA;
+            --color-primary-hover-start: #4338CA;
+            --color-primary-hover-end: #312E81;
+            --color-secondary-start: #10B981;
+            --color-secondary-end: #059669;
+            --color-accent-start:rgb(81, 84, 248);
+            --color-accent-end:rgb(100, 121, 230);
+            --color-logo: #4F46E5;
+            --shadow-brand-glow: 0 8px 25px rgba(79, 70, 229, 0.4);
+            --shadow-brand-glow-hover: 0 8px 30px rgba(79, 70, 229, 0.5);
+        }
+
+        /* 
+        Alternative Palettes - Uncomment one to switch:
+        
+        // Electric Blue & Purple
+        :root {
+            --color-primary-start: #3B82F6;
+            --color-primary-end: #1D4ED8;
+            --color-primary-hover-start: #1E40AF;
+            --color-primary-hover-end: #1E3A8A;
+            --color-secondary-start: #8B5CF6;
+            --color-secondary-end: #7C3AED;
+            --color-accent-start: #60A5FA;
+            --color-accent-end: #93C5FD;
+            --color-logo: #3B82F6;
+            --shadow-brand-glow: 0 8px 25px rgba(59, 130, 246, 0.5);
+            --shadow-brand-glow-hover: 0 8px 30px rgba(59, 130, 246, 0.6);
+        }
+
+        // Sunset Orange & Pink
+        :root {
+            --color-primary-start: #F97316;
+            --color-primary-end: #EA580C;
+            --color-primary-hover-start: #C2410C;
+            --color-primary-hover-end: #9A3412;
+            --color-secondary-start: #EC4899;
+            --color-secondary-end: #DB2777;
+            --color-accent-start: #FB923C;
+            --color-accent-end: #FDBA74;
+            --color-logo: #F97316;
+            --shadow-brand-glow: 0 8px 25px rgba(249, 115, 22, 0.5);
+            --shadow-brand-glow-hover: 0 8px 30px rgba(249, 115, 22, 0.6);
+        }
+
+        // Cyber Purple & Teal
+        :root {
+            --color-primary-start: #A855F7;
+            --color-primary-end: #9333EA;
+            --color-primary-hover-start: #7C3AED;
+            --color-primary-hover-end: #6D28D9;
+            --color-secondary-start: #06B6D4;
+            --color-secondary-end: #0891B2;
+            --color-accent-start: #C084FC;
+            --color-accent-end: #DDD6FE;
+            --color-logo: #A855F7;
+            --shadow-brand-glow: 0 8px 25px rgba(168, 85, 247, 0.5);
+            --shadow-brand-glow-hover: 0 8px 30px rgba(168, 85, 247, 0.6);
+        }
+        */
+
         /* Custom styles for modal state transitions */
         .modal-overlay[data-state='closed'] {
             @apply opacity-0 pointer-events-none;
@@ -69,14 +150,25 @@
                 height: 500px;
             }
         }
+        
+        /* Lottie container card for small screens */
+        .lottie-container {
+            @apply rounded-2xl backdrop-blur-sm shadow-xl pl-0 pr-6 py-6;
+        }
+        
+        @media (min-width: 1024px) {
+            .lottie-container {
+                @apply bg-none border-none shadow-none backdrop-blur-none p-0;
+            }
+        }
     </style>
 </head>
 <body class="bg-neutral-950 font-sans text-neutral-100 antialiased">
 
     <header class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800 bg-neutral-950/80 backdrop-blur-[10px]">
         <div class="mx-auto flex max-w-[1100px] items-center justify-between px-6 py-5">
-            <a href="#" class="rounded-xl bg-zinc-900 px-2.5 py-1.5 text-2xl font-bold text-white no-underline border border-zinc-700/50 shadow-sm hover:border-zinc-600/60 transition-all duration-200">1cert<span class="text-[#10B981]">.</span></a>
-            <button class="js-open-modal-btn rounded-lg bg-gradient-to-r from-[#10B981] to-[#059669] px-4 py-2 text-sm font-semibold text-white no-underline transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(16,185,129,0.5)]">Join Waitlist</button>
+            <a href="#" class="rounded-xl bg-zinc-900 px-2.5 py-1.5 text-2xl font-bold text-white no-underline border border-zinc-700/50 shadow-sm hover:border-zinc-600/60 transition-all duration-200">1cert<span class="text-brand-logo">.</span></a>
+            <button class="js-open-modal-btn rounded-lg bg-gradient-to-r from-brand-primary-start to-brand-primary-end px-4 py-2 text-sm font-semibold text-white no-underline transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-brand-glow">Join Waitlist</button>
         </div>
     </header>
 
@@ -86,23 +178,23 @@
                 <div class="grid grid-cols-1 items-center gap-6 text lg:grid-cols-2 lg:gap-16 lg:text-left">
                     <div class="lg:order-first">
                         <h1 class="mb-6 bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-4xl font-black leading-[1.1] tracking-tighter text-transparent md:text-5xl lg:text-[3.5rem]">
-                            <span class="inline-block rounded-xl bg-gradient-to-r from-[#DC2626] to-[#B91C1C] px-4 py-2 text-white shadow-xl">X509</span> Anywhere <span class="bg-gradient-to-r from-[#10B981] to-[#34D399] bg-clip-text text-transparent">From Your Pocket.</span>
+                            <span class="inline-block rounded-xl bg-gradient-to-r from-brand-secondary-start to-brand-secondary-end px-4 py-2 text-white shadow-xl">X509</span> Anywhere <span class="bg-gradient-to-r from-brand-accent-start to-brand-accent-end bg-clip-text text-transparent">From Your Pocket.</span>
                         </h1>
                         <div class="mx-auto mb-10 grid max-w-md grid-cols-1 items-stretch gap-6 lg:mx-0 lg:max-w-none lg:grid-cols-[1fr_auto]">
                             <p class="text-base leading-relaxed text-zinc-400 lg:text-lg">
                                 No more installing certificates on every machine. Your x509 cert stays safely on your phone while you authenticate to any server, service, or device with just a tap.
                             </p>
-                            <button class="js-open-modal-btn group hidden w-full flex-col items-start justify-between gap-1 rounded-xl bg-gradient-to-r from-[#10B981] to-[#059669] px-4 py-1.5 text-sm font-semibold text-white no-underline transition-all duration-200 ease-in-out hover:-translate-y-1 hover:from-[#047857] hover:to-[#065F46] hover:shadow-[0_8px_30px_rgba(16,185,129,0.5)] sm:gap-2 sm:px-6 sm:py-3 sm:text-base lg:flex lg:w-fit lg:whitespace-nowrap">
+                            <button class="js-open-modal-btn group hidden w-full flex-col items-start justify-between gap-1 rounded-xl bg-gradient-to-r from-brand-primary-start to-brand-primary-end px-4 py-1.5 text-sm font-semibold text-white no-underline transition-all duration-200 ease-in-out hover:-translate-y-1 hover:from-brand-primary-hover-start hover:to-brand-primary-hover-end hover:shadow-brand-glow-hover sm:gap-2 sm:px-6 sm:py-3 sm:text-base lg:flex lg:w-fit lg:whitespace-nowrap">
                                 <span>Join the Waitlist</span>
                                 <span class="ml-auto inline-block transition-transform duration-200 ease-in-out group-hover:translate-x-1.5">→</span>
                             </button>
                         </div>
                     </div>
                     <div class="group flex flex-col items-center justify-center [perspective:1000px] lg:order-last">
-                        <div class="w-full sm:rounded-2xl sm:bg-gradient-to-br sm:from-zinc-900/50 sm:to-zinc-800/30 sm:backdrop-blur-sm sm:border sm:border-zinc-700/20 sm:shadow-xl lg:bg-none lg:border-none lg:shadow-none lg:backdrop-blur-none">
+                        <div class="lottie-container w-full">
                             <div id="lottie-animation" class="transition-transform duration-500 ease group-hover:scale-105 group-hover:[transform:none] lg:[transform:rotateY(-10deg)_rotateX(5deg)]"></div>
                         </div>
-                        <button class="js-open-modal-btn group mt-4 flex w-full flex-col items-start justify-between gap-1 rounded-xl bg-gradient-to-r from-[#10B981] to-[#059669] px-4 py-1.5 text-sm font-semibold text-white no-underline transition-all duration-200 ease-in-out hover:-translate-y-1 hover:from-[#047857] hover:to-[#065F46] hover:shadow-[0_8px_30px_rgba(16,185,129,0.5)] sm:gap-2 sm:px-6 sm:py-3 sm:text-base lg:hidden">
+                        <button class="js-open-modal-btn group mt-4 ml-auto flex w-3/4 flex-col items-start justify-between gap-1 rounded-xl bg-gradient-to-r from-brand-primary-start to-brand-primary-end px-4 py-1.5 text-sm font-semibold text-white no-underline transition-all duration-200 ease-in-out hover:-translate-y-1 hover:from-brand-primary-hover-start hover:to-brand-primary-hover-end hover:shadow-brand-glow-hover sm:gap-2 sm:px-6 sm:py-3 sm:text-base lg:hidden">
                             <span>Join the Waitlist</span>
                             <span class="ml-auto inline-block transition-transform duration-200 ease-in-out group-hover:translate-x-1.5">→</span>
                         </button>
@@ -114,7 +206,7 @@
 
     <footer class="border-t border-zinc-800 bg-neutral-950">
         <div class="mx-auto flex max-w-[1100px] items-center justify-between px-6 py-6">
-            <div class="rounded-xl bg-zinc-900 px-2.5 py-1.5 text-lg font-bold text-white border border-zinc-700/50 shadow-sm">1cert<span class="text-[#10B981]">.</span></div>
+            <div class="rounded-xl bg-zinc-900 px-2.5 py-1.5 text-lg font-bold text-white border border-zinc-700/50 shadow-sm">1cert<span class="text-brand-logo">.</span></div>
             <div class="text-sm text-zinc-400">© 2025</div>
         </div>
     </footer>
