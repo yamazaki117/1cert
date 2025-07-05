@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1cert - Your Phone is Your Key</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="https://res.cloudinary.com/dunufio1l/image/upload/v1751748840/image_3_oowwpz.webp">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="1cert - Your Phone is Your Key">
+    <meta property="og:description" content="No more installing certificates on every machine. Your x509 cert stays safely on your phone while you authenticate to any server, service, or device with just a tap.">
+    <meta property="og:image" content="https://res.cloudinary.com/dunufio1l/image/upload/v1751749064/image_3_shzmue.png">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="1cert">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="1cert - Your Phone is Your Key">
+    <meta name="twitter:description" content="No more installing certificates on every machine. Your x509 cert stays safely on your phone while you authenticate to any server, service, or device with just a tap.">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dunufio1l/image/upload/v1751749064/image_3_shzmue.png">
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -161,14 +178,37 @@
                 @apply bg-none border-none shadow-none backdrop-blur-none p-0;
             }
         }
+
+        /* Logo styling - Made smaller */
+        .logo-image {
+            height: 24px;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        .logo-container {
+            @apply flex items-center justify-center rounded-xl bg-white px-2.5 py-1.5 border border-zinc-700/50 shadow-sm hover:border-zinc-600/60 transition-all duration-200;
+        }
+        
+        .footer-logo-image {
+            height: 20px;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        .footer-logo-container {
+            @apply flex items-center justify-center rounded-xl bg-white px-2.5 py-1.5 border border-zinc-700/50 shadow-sm;
+        }
     </style>
 </head>
 <body class="bg-neutral-950 font-sans text-neutral-100 antialiased">
 
     <header class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800 bg-neutral-950/80 backdrop-blur-[10px]">
         <div class="mx-auto flex max-w-[1100px] items-center justify-between px-6 py-5">
-            <a href="#" class="rounded-xl bg-zinc-900 px-2.5 py-1.5 text-2xl font-bold text-white no-underline border border-zinc-700/50 shadow-sm hover:border-zinc-600/60 transition-all duration-200">1cert<span class="text-brand-logo">.</span></a>
-            <button class="js-open-modal-btn rounded-lg bg-gradient-to-r from-brand-primary-start to-brand-primary-end px-4 py-2 text-sm font-semibold text-white no-underline transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-brand-glow">Join Waitlist</button>
+            <a href="#" class="logo-container no-underline">
+                <img src="https://res.cloudinary.com/dunufio1l/image/upload/v1751748316/logo_n21w7j.png" alt="1cert Logo" class="logo-image">
+            </a>
+            <button class="js-open-modal-btn rounded-xl bg-gradient-to-r from-brand-primary-start to-brand-primary-end px-3 py-2 text-base font-semibold text-white no-underline transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-brand-glow border border-transparent shadow-sm">Join Waitlist</button>
         </div>
     </header>
 
@@ -206,7 +246,9 @@
 
     <footer class="border-t border-zinc-800 bg-neutral-950">
         <div class="mx-auto flex max-w-[1100px] items-center justify-between px-6 py-6">
-            <div class="rounded-xl bg-zinc-900 px-2.5 py-1.5 text-lg font-bold text-white border border-zinc-700/50 shadow-sm">1cert<span class="text-brand-logo">.</span></div>
+            <div class="footer-logo-container">
+                <img src="https://res.cloudinary.com/dunufio1l/image/upload/v1751748316/logo_n21w7j.png" alt="1cert Logo" class="footer-logo-image">
+            </div>
             <div class="text-sm text-zinc-400">© 2025</div>
         </div>
     </footer>
