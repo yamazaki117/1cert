@@ -352,13 +352,28 @@ users:
                         </button>
                         <div class="faq-item-content"><div class="px-6 pb-6 text-zinc-400">Your certificates can be easily revoked from your 1cert dashboard. Since the private keys never leave your phone, a lost device does not mean a compromised key. You can then provision a new certificate on your new device.</div></div>
                     </div>
+                     <div class="faq-item glass-panel">
+                        <button class="faq-item-toggle flex w-full items-center justify-between p-6 text-left">
+                            <span class="text-lg font-medium text-white">Does the target server need to change anything?</span>
+                            <svg class="faq-chevron h-6 w-6 flex-shrink-0 text-zinc-400 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+                        </button>
+                        <div class="faq-item-content"><div class="px-6 pb-6 text-zinc-400">No. Unlinke current solutions that use short lived certs that require the server to accept a signature by a 3rd party CA, only the client (the user who need to authenticate) needs to have 1cert's lightweight daemon installed. </div></div>
+                    </div>
+                     <div class="faq-item glass-panel">
+                        <button class="faq-item-toggle flex w-full items-center justify-between p-6 text-left">
+                            <span class="text-lg font-medium text-white">Can I use this with my existing government/corporate certificates?</span>
+                            <svg class="faq-chevron h-6 w-6 flex-shrink-0 text-zinc-400 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+                        </button>
+                        <div class="faq-item-content"><div class="px-6 pb-6 text-zinc-400">Yes. This is directly related to the previous question. 1cert works with any existing X.509 client certificate (.p12, .pfx files). Whether it's your government-issued certificate for tax portals, corporate certificates for internal systems, or banking certificates—just import them into the 1cert app and start using them securely. </div></div>
+                    </div>
                     <div class="faq-item glass-panel">
                         <button class="faq-item-toggle flex w-full items-center justify-between p-6 text-left">
                             <span class="text-lg font-medium text-white">How is this more secure?</span>
                             <svg class="faq-chevron h-6 w-6 flex-shrink-0 text-zinc-400 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
                         </button>
-                        <div class="faq-item-content"><div class="px-6 pb-6 text-zinc-400">Traditional certificate files stored on a developer's laptop can be stolen by malware. With 1cert, the private key is generated and stored inside your phone's Secure Enclave or hardware-backed keystore. It can't be exported or accessed by the OS, making it dramatically more secure and phishing-resistant.</div></div>
+                        <div class="faq-item-content"><div class="px-6 pb-6 text-zinc-400">Traditional certificate files stored on a developer's laptop can be stolen by malware. With 1cert, the private key is stored inside your phone's Secure Enclave or hardware-backed keystore. It can't be exported or accessed by the OS, making it dramatically more secure and phishing-resistant.</div></div>
                     </div>
+                 
                     <div class="faq-item glass-panel">
                         <button class="faq-item-toggle flex w-full items-center justify-between p-6 text-left">
                             <span class="text-lg font-medium text-white">What platforms are supported?</span>
