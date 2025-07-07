@@ -81,55 +81,6 @@
             --shadow-brand-glow-hover: 0 8px 30px rgba(79, 70, 229, 0.5);
         }
 
-        /* 
-        Alternative Palettes - Uncomment one to switch:
-        
-        // Electric Blue & Purple
-        :root {
-            --color-primary-start: #3B82F6;
-            --color-primary-end: #1D4ED8;
-            --color-primary-hover-start: #1E40AF;
-            --color-primary-hover-end: #1E3A8A;
-            --color-secondary-start: #8B5CF6;
-            --color-secondary-end: #7C3AED;
-            --color-accent-start: #60A5FA;
-            --color-accent-end: #93C5FD;
-            --color-logo: #3B82F6;
-            --shadow-brand-glow: 0 8px 25px rgba(59, 130, 246, 0.5);
-            --shadow-brand-glow-hover: 0 8px 30px rgba(59, 130, 246, 0.6);
-        }
-
-        // Sunset Orange & Pink
-        :root {
-            --color-primary-start: #F97316;
-            --color-primary-end: #EA580C;
-            --color-primary-hover-start: #C2410C;
-            --color-primary-hover-end: #9A3412;
-            --color-secondary-start: #EC4899;
-            --color-secondary-end: #DB2777;
-            --color-accent-start: #FB923C;
-            --color-accent-end: #FDBA74;
-            --color-logo: #F97316;
-            --shadow-brand-glow: 0 8px 25px rgba(249, 115, 22, 0.5);
-            --shadow-brand-glow-hover: 0 8px 30px rgba(249, 115, 22, 0.6);
-        }
-
-        // Cyber Purple & Teal
-        :root {
-            --color-primary-start: #A855F7;
-            --color-primary-end: #9333EA;
-            --color-primary-hover-start: #7C3AED;
-            --color-primary-hover-end: #6D28D9;
-            --color-secondary-start: #06B6D4;
-            --color-secondary-end: #0891B2;
-            --color-accent-start: #C084FC;
-            --color-accent-end: #DDD6FE;
-            --color-logo: #A855F7;
-            --shadow-brand-glow: 0 8px 25px rgba(168, 85, 247, 0.5);
-            --shadow-brand-glow-hover: 0 8px 30px rgba(168, 85, 247, 0.6);
-        }
-        */
-
         /* Custom styles for modal state transitions */
         .modal-overlay[data-state='closed'] {
             @apply opacity-0 pointer-events-none;
@@ -199,6 +150,62 @@
         .footer-logo-container {
             @apply flex items-center justify-center rounded-xl bg-white px-2.5 py-1.5 border border-zinc-700/50 shadow-sm;
         }
+
+        /* Glass panel effect for sections */
+        .glass-panel {
+            @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
+        }
+
+        /* Bento grid layout */
+        .bento-grid {
+            @apply grid gap-6 md:grid-cols-3;
+        }
+        .bento-grid > div {
+            @apply glass-panel p-6;
+        }
+
+        /* Button styles */
+        .btn-primary {
+            @apply rounded-xl bg-gradient-to-r from-brand-primary-start to-brand-primary-end px-4 py-2 text-base font-semibold text-white no-underline transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-brand-glow border border-transparent shadow-sm;
+        }
+
+        /* Use case tabs */
+        .use-case-tab {
+            @apply w-full rounded-xl px-4 py-3 text-center text-sm font-medium text-zinc-400 transition-all duration-200 hover:bg-white/10 hover:text-white;
+        }
+        .use-case-tab.active {
+            @apply bg-gradient-to-r from-brand-primary-start to-brand-primary-end text-white shadow-brand-glow;
+        }
+
+        /* Use case content */
+        .use-case-content {
+            @apply hidden;
+        }
+        .use-case-content.active {
+            @apply block;
+        }
+
+        /* Code blocks */
+        .code-block {
+            @apply mt-4 rounded-xl bg-black/50 p-4 text-sm text-zinc-300 border border-white/10 overflow-x-auto;
+        }
+        .code-block code {
+            @apply whitespace-pre-wrap break-words;
+        }
+
+        /* FAQ styling */
+        .faq-item {
+            @apply transition-all duration-200;
+        }
+        .faq-item.active .faq-chevron {
+            @apply rotate-180;
+        }
+        .faq-item-content {
+            @apply max-h-0 overflow-hidden transition-all duration-300 ease-out;
+        }
+        .faq-item.active .faq-item-content {
+            @apply max-h-96;
+        }
     </style>
 </head>
 <body class="bg-neutral-950 font-sans text-neutral-100 antialiased">
@@ -208,11 +215,17 @@
             <a href="#" class="logo-container no-underline">
                 <img src="https://res.cloudinary.com/dunufio1l/image/upload/v1751748316/logo_n21w7j.png" alt="1cert Logo" class="logo-image">
             </a>
-            <button class="js-open-modal-btn rounded-xl bg-gradient-to-r from-brand-primary-start to-brand-primary-end px-3 py-2 text-base font-semibold text-white no-underline transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-brand-glow border border-transparent shadow-sm">Join Waitlist</button>
+            <nav class="hidden items-center gap-6 lg:flex">
+                <a href="#features" class="text-sm font-medium text-neutral-300 transition-colors hover:text-white">Features</a>
+                <a href="#use-cases" class="text-sm font-medium text-neutral-300 transition-colors hover:text-white">Use Cases</a>
+                <a href="#faq" class="text-sm font-medium text-neutral-300 transition-colors hover:text-white">FAQ</a>
+            </nav>
+            <button class="js-open-modal-btn btn-primary">Join Waitlist</button>
         </div>
     </header>
 
     <main>
+        <!-- HERO SECTION (from 2nd paste) -->
         <section class="flex min-h-screen items-center justify-center pt-32 pb-10 md:pt-20">
             <div class="mx-auto max-w-[1100px] px-6">
                 <div class="grid grid-cols-1 items-center gap-6 text lg:grid-cols-2 lg:gap-16 lg:text-left">
@@ -242,6 +255,121 @@
                 </div>
             </div>
         </section>
+
+        <!-- BENTO GRID (Features + How it Works) -->
+        <section id="features" class="py-20 lg:py-28">
+            <div class="mx-auto max-w-[1100px] px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold tracking-tighter text-white sm:text-4xl">The Future of Certificate Management</h2>
+                    <p class="mt-4 mx-auto max-w-2xl text-lg text-zinc-400">All the power of mTLS, none of the hassle. Secure, simple, and built for modern teams.</p>
+                </div>
+                <div class="bento-grid">
+                    <!-- Feature 1: Security -->
+                    <div class="md:col-span-2">
+                        <h3 class="text-xl font-semibold text-white mb-2">Phishing-Resistant by Design</h3>
+                        <p class="text-zinc-400">Private keys never leave your phone's Secure Enclave, protected by biometrics. This fundamentally breaks common attack vectors for credential theft.</p>
+                    </div>
+                    <!-- Feature 2: How it works -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-white mb-4">How it Works</h3>
+                        <div class="flex flex-col gap-3 text-sm text-zinc-300">
+                            <div class="flex items-center gap-3"><span class="flex-shrink-0 w-6 h-6 bg-brand-primary-start/50 text-white rounded-full flex items-center justify-center font-bold">1</span><span>Install proxy & get cert on phone.</span></div>
+                            <div class="flex items-center gap-3"><span class="flex-shrink-0 w-6 h-6 bg-brand-primary-start/50 text-white rounded-full flex items-center justify-center font-bold">2</span><span>Run command (e.g., `ssh server`).</span></div>
+                            <div class="flex items-center gap-3"><span class="flex-shrink-0 w-6 h-6 bg-brand-primary-start/50 text-white rounded-full flex items-center justify-center font-bold">3</span><span>Tap 'Approve' on your phone.</span></div>
+                        </div>
+                    </div>
+                    <!-- Feature 3: Convenience -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Zero-Hassle</h3>
+                        <p class="text-zinc-400">Stop copying certificates to every laptop, server, or container. Authenticate from anywhere.</p>
+                    </div>
+                    <!-- Feature 4: Compatibility -->
+                    <div class="md:col-span-2">
+                        <h3 class="text-xl font-semibold text-white mb-2">Universal Compatibility</h3>
+                        <p class="text-zinc-400">Our lightweight proxy integrates seamlessly with your existing tools: SSH, `kubectl`, `curl`, web browsers, and anything that supports mTLS.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE USE CASES -->
+        <section id="use-cases" class="py-20 lg:py-28">
+            <div class="mx-auto max-w-[1100px] px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold tracking-tighter text-white sm:text-4xl">Integrates With Your Workflow</h2>
+                    <p class="mt-4 mx-auto max-w-2xl text-lg text-zinc-400">Replace cumbersome secret management and password prompts with a single, secure tap.</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                    <div id="use-case-tabs" class="flex lg:flex-col gap-2 glass-panel p-3">
+                        <button class="use-case-tab active" data-target="ssh"><span class="lg:hidden">SSH</span><span class="hidden lg:inline">SSH Access</span></button>
+                        <button class="use-case-tab" data-target="k8s">Kubernetes</button>
+                        <button class="use-case-tab" data-target="web"><span class="lg:hidden">Web</span><span class="hidden lg:inline">Web Dashboards</span></button>
+                    </div>
+                    <div class="lg:col-span-2 glass-panel p-6 min-h-[200px]">
+                        <div id="ssh" class="use-case-content active">
+                            <h3 class="text-xl font-semibold text-white mb-2">Passwordless SSH</h3>
+                            <p class="text-zinc-400 mb-4">Configure your SSH client to use the 1cert proxy. Now, `ssh` commands trigger a prompt on your phone instead of asking for a key password.</p>
+                            <pre class="code-block"><code># ~/.ssh/config
+Host *.prod.mycorp.com
+  ProxyCommand 1cert-proxy ssh --host %h %p
+  IdentityAgent none</code></pre>
+                        </div>
+                        <div id="k8s" class="use-case-content">
+                             <h3 class="text-xl font-semibold text-white mb-2">Secure `kubectl`</h3>
+                            <p class="text-zinc-400 mb-4">Point your kubeconfig to 1cert to authenticate your `kubectl` commands. Great for managing short-lived certificates for cluster access.</p>
+                            <pre class="code-block"><code># ~/.kube/config
+users:
+- name: developer
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1beta1
+      command: 1cert-proxy
+      args:
+      - kube</code></pre>
+                        </div>
+                        <div id="web" class="use-case-content">
+                            <h3 class="text-xl font-semibold text-white mb-2">Internal Web Apps & VPNs</h3>
+                            <p class="text-zinc-400 mb-4">Set up the 1cert proxy for your browser. Access internal tools protected by mTLS without installing certificates in your system keychain.</p>
+                            <pre class="code-block"><code># No code, just seamless browser-based authentication.
+# Access Grafana, Jenkins, internal portals, and more.</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section id="faq" class="py-20 lg:py-28">
+            <div class="mx-auto max-w-3xl px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tighter text-white sm:text-4xl">Frequently Asked Questions</h2>
+                </div>
+                <div class="space-y-4" id="faq-accordion">
+                    <div class="faq-item glass-panel">
+                        <button class="faq-item-toggle flex w-full items-center justify-between p-6 text-left">
+                            <span class="text-lg font-medium text-white">What happens if I lose my phone?</span>
+                            <svg class="faq-chevron h-6 w-6 flex-shrink-0 text-zinc-400 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+                        </button>
+                        <div class="faq-item-content"><div class="px-6 pb-6 text-zinc-400">Your certificates can be easily revoked from your 1cert dashboard. Since the private keys never leave your phone, a lost device does not mean a compromised key. You can then provision a new certificate on your new device.</div></div>
+                    </div>
+                    <div class="faq-item glass-panel">
+                        <button class="faq-item-toggle flex w-full items-center justify-between p-6 text-left">
+                            <span class="text-lg font-medium text-white">How is this more secure?</span>
+                            <svg class="faq-chevron h-6 w-6 flex-shrink-0 text-zinc-400 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+                        </button>
+                        <div class="faq-item-content"><div class="px-6 pb-6 text-zinc-400">Traditional certificate files stored on a developer's laptop can be stolen by malware. With 1cert, the private key is generated and stored inside your phone's Secure Enclave or hardware-backed keystore. It can't be exported or accessed by the OS, making it dramatically more secure and phishing-resistant.</div></div>
+                    </div>
+                    <div class="faq-item glass-panel">
+                        <button class="faq-item-toggle flex w-full items-center justify-between p-6 text-left">
+                            <span class="text-lg font-medium text-white">What platforms are supported?</span>
+                            <svg class="faq-chevron h-6 w-6 flex-shrink-0 text-zinc-400 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+                        </button>
+                        <div class="faq-item-content"><div class="px-6 pb-6 text-zinc-400">The 1cert mobile app will be available for both iOS and Android. The client-side proxy tool is a cross-platform binary that runs on macOS, Windows, and Linux.</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="border-t border-zinc-800 bg-neutral-950">
@@ -249,7 +377,7 @@
             <div class="footer-logo-container">
                 <img src="https://res.cloudinary.com/dunufio1l/image/upload/v1751748316/logo_n21w7j.png" alt="1cert Logo" class="footer-logo-image">
             </div>
-            <div class="text-sm text-zinc-400">© 2025</div>
+            <div class="text-sm text-zinc-400">© 2025 1cert</div>
         </div>
     </footer>
 
@@ -268,83 +396,86 @@
         </div>
     </div>
 
-
     <!-- Scripts -->
     <script src="https://www.waitforit.me/waitlistV3.bundle.js" async></script>
     <script>
-        // Responsive Lottie Animation Setup
-        let lottieAnimation = null;
-        
-        const loadLottieAnimation = () => {
-            // Destroy existing animation if it exists
-            if (lottieAnimation) {
-                lottieAnimation.destroy();
-            }
+        document.addEventListener('DOMContentLoaded', () => {
+            // Responsive Lottie Animation Setup
+            let lottieAnimation = null;
             
-            // Check if screen is large (1024px+) using window.innerWidth
-            const isLargeScreen = window.innerWidth >= 1024;
+            const loadLottieAnimation = () => {
+                // Destroy existing animation if it exists
+                if (lottieAnimation) {
+                    lottieAnimation.destroy();
+                }
+                
+                // Check if screen is large (1024px+) using window.innerWidth
+                const isLargeScreen = window.innerWidth >= 1024;
+                
+                // Use different animations based on screen size
+                const animationPath = isLargeScreen 
+                    ? 'https://res.cloudinary.com/dunufio1l/raw/upload/v1751716721/cert_taneux.json'
+                    : 'https://res.cloudinary.com/dunufio1l/raw/upload/v1751734747/trimmed-cert_qmifum.json';
+                
+                lottieAnimation = lottie.loadAnimation({
+                    container: document.getElementById('lottie-animation'),
+                    renderer: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    path: animationPath
+                });
+            };
             
-            // Use different animations based on screen size
-            const animationPath = isLargeScreen 
-                ? 'https://res.cloudinary.com/dunufio1l/raw/upload/v1751716721/cert_taneux.json'
-                : 'https://res.cloudinary.com/dunufio1l/raw/upload/v1751734747/trimmed-cert_qmifum.json';
+            // Load animation initially
+            loadLottieAnimation();
             
-            lottieAnimation = lottie.loadAnimation({
-                container: document.getElementById('lottie-animation'),
-                renderer: 'svg',
-                loop: true,
-                autoplay: true,
-                path: animationPath
+            // Reload animation on window resize with debouncing
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    loadLottieAnimation();
+                }, 250);
             });
-        };
-        
-        // Load animation initially
-        loadLottieAnimation();
-        
-        // Reload animation on window resize with debouncing
-        let resizeTimeout;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(() => {
-                loadLottieAnimation();
-            }, 250);
-        });
 
-        // MODAL LOGIC
-        const modal = document.getElementById('waitlist-modal');
-        const openModalBtns = document.querySelectorAll('.js-open-modal-btn');
-        const closeModalBtn = modal.querySelector('.modal-close-btn');
+            // Modal Logic
+            const modal = document.getElementById('waitlist-modal');
+            const openModalBtns = document.querySelectorAll('.js-open-modal-btn');
+            const closeModalBtn = modal.querySelector('.modal-close-btn');
+            const openModal = () => { modal.dataset.state = 'open'; document.body.style.overflow = 'hidden'; };
+            const closeModal = () => { modal.dataset.state = 'closed'; document.body.style.overflow = ''; };
+            openModalBtns.forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); openModal(); }));
+            closeModalBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.dataset.state === 'open') closeModal(); });
 
-        const openModal = () => {
-            modal.dataset.state = 'open';
-            document.body.style.overflow = 'hidden';
-        };
-
-        const closeModal = () => {
-            modal.dataset.state = 'closed';
-            document.body.style.overflow = '';
-        };
-
-        openModalBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                openModal();
-            });
-        });
-
-        closeModalBtn.addEventListener('click', closeModal);
-
-        // Close modal if user clicks on the overlay
-        modal.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                closeModal();
+            // FAQ Accordion
+            const faqAccordion = document.getElementById('faq-accordion');
+            if (faqAccordion) {
+                faqAccordion.querySelectorAll('.faq-item-toggle').forEach(toggle => {
+                    toggle.addEventListener('click', () => {
+                        toggle.closest('.faq-item').classList.toggle('active');
+                    });
+                });
             }
-        });
-        
-        // Close modal if user presses Escape key
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && modal.dataset.state === 'open') {
-                closeModal();
+
+            // Use Case Tabs
+            const tabsContainer = document.getElementById('use-case-tabs');
+            if (tabsContainer) {
+                const tabs = tabsContainer.querySelectorAll('.use-case-tab');
+                const contents = document.querySelectorAll('.use-case-content');
+                tabsContainer.addEventListener('click', (e) => {
+                    const tab = e.target.closest('.use-case-tab');
+                    if (!tab) return;
+                    
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    const targetId = tab.dataset.target;
+                    contents.forEach(c => {
+                        c.classList.toggle('active', c.id === targetId);
+                    });
+                });
             }
         });
     </script>
