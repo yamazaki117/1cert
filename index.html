@@ -391,8 +391,6 @@ $ 1cert-cli sign \
                             <h3 class="text-xl font-semibold text-white mb-2">The `sig.json` Explained</h3>
                             <p class="text-zinc-400 mb-4">This simple, public file contains everything needed for verification. It's hosted at `/.well-known/sig.json` on your domain.</p>
                             <pre class="code-block"><code>{
-  <span class="text-gray-500">// Public key from the site's DV cert (Let's Encrypt)</span>
-  "dvPublicKey": "...", 
   
   <span class="text-gray-500">// Public key from the government-issued p12</span>
   "govPublicKey": "...",
@@ -400,6 +398,8 @@ $ 1cert-cli sign \
   <span class="text-gray-500">// The signature, proving the holder of the gov key
   // vouches for the domain key.</span>
   "signature": "..." 
+ <span class="text-gray-500">// Metadata like timestamps and other additional info</span>
+  "metadata": "...", 
 }</code></pre>
                         </div>
                     </div>
