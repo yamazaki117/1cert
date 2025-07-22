@@ -231,11 +231,11 @@
                 <div class="grid grid-cols-1 items-center gap-6 text lg:grid-cols-2 lg:gap-16 lg:text-left">
                     <div class="lg:order-first">
                         <h1 class="mb-6 bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-4xl font-black leading-[1.1] tracking-tighter text-transparent md:text-5xl lg:text-[3.5rem]">
-                            <span class="inline-block rounded-xl bg-gradient-to-r from-brand-secondary-start to-brand-secondary-end px-4 py-2 text-white shadow-xl">X509</span> Anywhere <span class="bg-gradient-to-r from-brand-accent-start to-brand-accent-end bg-clip-text text-transparent">From Your Pocket.</span>
+                            <span class="inline-block rounded-xl bg-gradient-to-r from-brand-secondary-start to-brand-secondary-end px-4 py-2 text-white shadow-xl">EV SSL</span> for Free <br><span class="bg-gradient-to-r from-brand-accent-start to-brand-accent-end bg-clip-text text-transparent">From Your .p12 </span>
                         </h1>
                         <div class="mx-auto mb-10 grid max-w-md grid-cols-1 items-stretch gap-6 lg:mx-0 lg:max-w-none lg:grid-cols-[1fr_auto]">
                             <p class="text-base leading-relaxed text-zinc-400 lg:text-lg">
-                                No more installing certificates on every machine. Your x509 cert stays safely on your phone while you authenticate to any server, service, or device with just a tap.
+                                No more paying for expensive EV SSL certs. Your government-issued p12 and a free Let's Encrypt cert cryptographically prove which organization controls your domain.
                             </p>
                             <button class="js-open-modal-btn group hidden w-full flex-col items-start justify-between gap-1 rounded-xl bg-gradient-to-r from-brand-primary-start to-brand-primary-end px-4 py-1.5 text-sm font-semibold text-white no-underline transition-all duration-200 ease-in-out hover:-translate-y-1 hover:from-brand-primary-hover-start hover:to-brand-primary-hover-end hover:shadow-brand-glow-hover sm:gap-2 sm:px-6 sm:py-3 sm:text-base lg:flex lg:w-fit lg:whitespace-nowrap">
                                 <span>Join the Waitlist</span>
@@ -259,79 +259,148 @@
         <!-- BENTO GRID (Features + How it Works) -->
         <section id="features" class="py-20 lg:py-28">
             <div class="mx-auto max-w-[1100px] px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl font-bold tracking-tighter text-white sm:text-4xl">The Future of Certificate Management</h2>
-                    <p class="mt-4 mx-auto max-w-2xl text-lg text-zinc-400">All the power of mTLS, none of the hassle. Secure, simple, and built for modern teams.</p>
+                <div class="text-center mb-11">
+                    <h2 class="text-3xl font-bold tracking-tighter text-white sm:text-4xl">Decentralized Trust</h2>
+                    <p class="mt-4 mx-auto max-w-2xl text-lg text-zinc-400">Simple, secure, and free organization validation using assets you already own.</p>
+                </div>
+                 <!-- Visual Flow -->
+                <div class="relative mb-16 ">
+                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-64 w-full max-w-lg rounded-full bg-brand-primary-end/20 blur-3xl"></div>
+                    <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6">
+                        <!-- Item 1: Gov P12 -->
+                        <div class="flex flex-col items-center gap-2 text-center">
+                            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 ring-1 ring-white/20">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7 text-white"><path fill-rule="evenodd" d="M.75 4.5a.75.75 0 01.75-.75h14.25a.75.75 0 010 1.5H1.5a.75.75 0 01-.75-.75zM1.5 6a.75.75 0 000 1.5h14.25a.75.75 0 000-1.5H1.5zM.75 9.75A.75.75 0 011.5 9h14.25a.75.75 0 010 1.5H1.5a.75.75 0 01-.75-.75zM1.5 12a.75.75 0 000 1.5h14.25a.75.75 0 000-1.5H1.5zM.75 15.75a.75.75 0 01.75-.75h14.25a.75.75 0 010 1.5H1.5a.75.75 0 01-.75-.75zM19.5 18a.75.75 0 000 1.5h.75a.75.75 0 000-1.5h-.75zM18 15.75a.75.75 0 01.75-.75h4.5a.75.75 0 010 1.5h-4.5a.75.75 0 01-.75-.75zM19.5 12a.75.75 0 000 1.5h.75a.75.75 0 000-1.5h-.75zM18 9.75a.75.75 0 01.75-.75h4.5a.75.75 0 010 1.5h-4.5a.75.75 0 01-.75-.75zM19.5 6a.75.75 0 000 1.5h.75a.75.75 0 000-1.5h-.75zM18 3.75a.75.75 0 01.75-.75h4.5a.75.75 0 010 1.5h-4.5a.75.75 0 01-.75-.75z" clip-rule="evenodd" /></svg>
+                            </div>
+                            <span class="max-w-[100px] text-xs text-zinc-400">Your Company<br>P12 Certificate</span>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 text-zinc-600 rotate-90 sm:rotate-0"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" /></svg>
+                        <!-- Item 2: DV Cert -->
+                        <div class="flex flex-col items-center gap-2 text-center">
+                            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 ring-1 ring-white/20">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7 text-white"><path fill-rule="evenodd" d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3A5.25 5.25 0 0012 1.5zm-3.75 5.25a3.75 3.75 0 017.5 0v3h-7.5v-3z" clip-rule="evenodd" /></svg>
+                            </div>
+                            <span class="max-w-[100px] text-xs text-zinc-400">Free Let's Encrypt DV Cert</span>
+                        </div>
+                        <!-- Arrow Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 text-zinc-600 rotate-90 sm:rotate-0">
+                            <path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <!-- Item 3: Result -->
+                        <div class="flex flex-col items-center gap-2 text-center">
+                            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-secondary-start/20 ring-1 ring-brand-secondary-start/50">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7 text-brand-secondary-start"><path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12c0 1.357-.6 2.573-1.549 3.397a4.49 4.49 0 01-1.307 3.498 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75c-1.357 0-2.573-.6-3.397-1.549a4.49 4.49 0 01-3.498-1.307 4.491 4.491 0 01-1.307-3.497A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.498 4.491 4.491 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" /></svg>
+                            </div>
+                            <span class="max-w-[100px] text-xs font-medium text-green-400">Verifiably Owned<br>Domain</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="bento-grid">
-                    <!-- Feature 1: Security -->
+                    <!-- Feature 1: Leverage Identity -->
                     <div class="md:col-span-2">
-                        <h3 class="text-xl font-semibold text-white mb-2">Phishing-Resistant by Design</h3>
-                        <p class="text-zinc-400">Private keys never leave your phone's Secure Enclave, protected by biometrics. This fundamentally breaks common attack vectors for credential theft.</p>
+                        <h3 class="text-xl font-semibold text-white mb-2">Leverage Your Official Identity</h3>
+                        <p class="text-zinc-400">You already have a government-issued p12 from registering your company. We provide the tools to use it to secure your domain's identity, creating a direct cryptographic link.</p>
                     </div>
                     <!-- Feature 2: How it works -->
                     <div>
                         <h3 class="text-xl font-semibold text-white mb-4">How it Works</h3>
                         <div class="flex flex-col gap-3 text-sm text-zinc-300">
-                            <div class="flex items-center gap-3"><span class="flex-shrink-0 w-6 h-6 bg-brand-primary-start/50 text-white rounded-full flex items-center justify-center font-bold">1</span><span>Install proxy & get cert on phone.</span></div>
-                            <div class="flex items-center gap-3"><span class="flex-shrink-0 w-6 h-6 bg-brand-primary-start/50 text-white rounded-full flex items-center justify-center font-bold">2</span><span>Run command (e.g., `ssh server`).</span></div>
-                            <div class="flex items-center gap-3"><span class="flex-shrink-0 w-6 h-6 bg-brand-primary-start/50 text-white rounded-full flex items-center justify-center font-bold">3</span><span>Tap 'Approve' on your phone.</span></div>
+                            <div class="flex items-center gap-3"><span class="flex-shrink-0 w-6 h-6 bg-brand-primary-start/50 text-white rounded-full flex items-center justify-center font-bold">1</span><span>Get a free DV cert (e.g. Let's Encrypt).</span></div>
+                            <div class="flex items-center gap-3"><span class="flex-shrink-0 w-6 h-6 bg-brand-primary-start/50 text-white rounded-full flex items-center justify-center font-bold">2</span><span>Sign its key with your company p12.</span></div>
+                            <div class="flex items-center gap-3"><span class="flex-shrink-0 w-6 h-6 bg-brand-primary-start/50 text-white rounded-full flex items-center justify-center font-bold">3</span><span>Host the resulting `sig.json` file.</span></div>
                         </div>
                     </div>
-                    <!-- Feature 3: Convenience -->
+                    <!-- Feature 3: Cost -->
                     <div>
-                        <h3 class="text-xl font-semibold text-white mb-2">Zero-Hassle</h3>
-                        <p class="text-zinc-400">Stop copying certificates to every laptop, server, or container. Authenticate from anywhere.</p>
+                        <h3 class="text-xl font-semibold text-white mb-2">Dramatically Cheaper</h3>
+                        <p class="text-zinc-400">Why pay hundreds for an OV certificate when you can achieve a similar level of cryptographic proof for free?</p>
                     </div>
-                    <!-- Feature 4: Compatibility -->
+                    <!-- Feature 4: Verifiable -->
                     <div class="md:col-span-2">
-                        <h3 class="text-xl font-semibold text-white mb-2">Universal Compatibility</h3>
-                        <p class="text-zinc-400">Our lightweight proxy integrates seamlessly with your existing tools: SSH, `kubectl`, `curl`, web browsers, and anything that supports mTLS.</p>
+                        <h3 class="text-xl font-semibold text-white mb-2">Transparent & Verifiable</h3>
+                        <p class="text-zinc-400">Our method is transparent. Any user or service can fetch your certificate and signature file to mathematically verify the link between your domain and your registered organization.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- INTERACTIVE USE CASES -->
+         <!-- INTERACTIVE USE CASES -->
         <section id="use-cases" class="py-20 lg:py-28">
             <div class="mx-auto max-w-[1100px] px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl font-bold tracking-tighter text-white sm:text-4xl">Integrates With Your Workflow</h2>
-                    <p class="mt-4 mx-auto max-w-2xl text-lg text-zinc-400">Replace cumbersome secret management and password prompts with a single, secure tap.</p>
+                    <h2 class="text-3xl font-bold tracking-tighter text-white sm:text-4xl">See It In Action</h2>
+                    <p class="mt-4 mx-auto max-w-2xl text-lg text-zinc-400">A simple process for site owners, and a transparent verification method for users.</p>
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
                     <div id="use-case-tabs" class="flex lg:flex-col gap-2 glass-panel p-3">
-                        <button class="use-case-tab active" data-target="ssh"><span class="lg:hidden">SSH</span><span class="hidden lg:inline">SSH Access</span></button>
-                        <button class="use-case-tab" data-target="k8s">Kubernetes</button>
-                        <button class="use-case-tab" data-target="web"><span class="lg:hidden">Web</span><span class="hidden lg:inline">Web Dashboards</span></button>
+                        <button class="use-case-tab active" data-target="owner">For Site Owners</button>
+                        <button class="use-case-tab" data-target="visitor">For Visitors</button>
+                        <button class="use-case-tab" data-target="file">The `sig.json` File</button>
                     </div>
-                    <div class="lg:col-span-3 glass-panel p-6 min-h-[200px]">
-                        <div id="ssh" class="use-case-content active">
-                            <h3 class="text-xl font-semibold text-white mb-2">Passwordless SSH</h3>
-                            <p class="text-zinc-400 mb-4">Configure your SSH client to use the 1cert proxy. Now, `ssh` commands trigger a prompt on your phone instead of asking for a key password.</p>
-                            <pre class="code-block"><code># ~/.ssh/config
-Host *.prod.mycorp.com
-  ProxyCommand 1cert-proxy ssh --host %h %p
-  IdentityAgent none</code></pre>
+                    <div class="lg:col-span-3 glass-panel p-6 min-h-[280px]">
+                        <div id="owner" class="use-case-content active">
+                            <h3 class="text-xl font-semibold text-white mb-2">One-Command Setup</h3>
+                            <p class="text-zinc-400 mb-4">Our command-line tool handles everything: finding your Let's Encrypt certificate, signing its public key with your company's p12, and creating the `sig.json` file for you.</p>
+                            <pre class="code-block"><code># Run this on your server
+$ 1cert-cli sign \
+    --p12-path /path/to/your-company.p12 \
+    --domain yoursite.com
+    
+<span class="text-green-400">✔ Successfully created .well-known/sig.json</span></code></pre>
                         </div>
-                        <div id="k8s" class="use-case-content">
-                             <h3 class="text-xl font-semibold text-white mb-2">Secure `kubectl`</h3>
-                            <p class="text-zinc-400 mb-4">Point your kubeconfig to 1cert to authenticate your `kubectl` commands. Great for managing short-lived certificates for cluster access.</p>
-                            <pre class="code-block"><code># ~/.kube/config
-users:
-- name: developer
-  user:
-    exec:
-      apiVersion: client.authentication.k8s.io/v1beta1
-      command: 1cert-proxy
-      args:
-      - kube</code></pre>
+                       <div id="visitor" class="use-case-content">
+                             <h3 class="text-xl font-semibold text-white mb-2">Instant Visual Verification</h3>
+                            <p class="text-zinc-400 mb-4">When a visitor clicks a verification badge in your site's navigation or footer, a popup instantly queries our service to perform a live check, confirming your organization's identity in real-time.</p>
+                            <div class="mt-6 border-t border-white/10 pt-6">
+                                <p class="text-sm font-medium text-zinc-300 mb-3">Example Flow:</p>
+                                <div class="space-y-4">
+                                    <!-- Step 1: User clicks badge -->
+                                    <div class="flex items-center gap-4">
+                                        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-700 text-sm font-bold">1</span>
+                                        <div class="text-sm">
+                                            <p class="text-white">Visitor clicks the verification badge on your site.</p>
+                                            <div class="mt-2 inline-flex cursor-pointer items-center gap-2 rounded-md bg-zinc-800 px-3 py-1 text-xs ring-1 ring-zinc-700 hover:bg-zinc-700">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-green-400"><path fill-rule="evenodd" d="M16.403 12.652a3 3 0 00-2.824-2.824l-3.32-3.319a3 3 0 00-4.243 4.243l3.32 3.319a3 3 0 004.243-4.243l-3.32-3.319a3 3 0 00-4.243 4.243l3.32 3.319a3 3 0 004.243-4.243l-1.414-1.414a1.5 1.5 0 00-2.121 2.121l1.414 1.414a.75.75 0 001.06-1.06l-1.414-1.414a3 3 0 00-4.243 0z" clip-rule="evenodd" /><path fill-rule="evenodd" d="M3.597 12.652a3 3 0 004.243 0l1.414-1.414a.75.75 0 00-1.06-1.06l-1.414 1.414a1.5 1.5 0 00-2.121-2.121l1.414-1.414a3 3 0 000-4.243l-3.32-3.319a3 3 0 00-4.243 4.243l3.32 3.319a3 3 0 004.243 4.243l3.32 3.319a3 3 0 004.243-4.243l-3.32-3.319a3 3 0 00-4.243 4.243l-1.414-1.414a1.5 1.5 0 00-2.121 2.121l1.414 1.414a.75.75 0 001.06-1.06l-1.414-1.414a3 3 0 00-4.243 0z" clip-rule="evenodd" /></svg>
+                                                <span>Verified by 1cert</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Step 2: Verification popup appears -->
+                                    <div class="flex items-start gap-4">
+                                        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-700 text-sm font-bold mt-1">2</span>
+                                        <div class="flex-1">
+                                            <p class="text-sm text-white mb-2">A verification window opens, showing the result:</p>
+                                            <div class="rounded-lg bg-black/50 p-4 ring-1 ring-white/10">
+                                                <div class="flex items-center gap-3">
+                                                    <div class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-green-500/10">
+                                                        <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" /></svg>
+                                                    </div>
+                                                    <p class="font-semibold text-green-400">Verification Successful</p>
+                                                </div>
+                                                <div class="mt-3 space-y-1 pl-11 text-sm">
+                                                    <p><span class="text-zinc-400">Domain:</span> <span class="text-white">yoursite.com</span></p>
+                                                    <p><span class="text-zinc-400">Organization:</span> <span class="text-white">Your Official Company Name, Inc.</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div id="web" class="use-case-content">
-                            <h3 class="text-xl font-semibold text-white mb-2">Internal Web Apps & VPNs</h3>
-                            <p class="text-zinc-400 mb-4">Set up the 1cert proxy for your browser. Access internal tools protected by mTLS without installing certificates in your system keychain.</p>
-                            <pre class="code-block"><code># No code, just seamless browser-based authentication.
-# Access Grafana, Jenkins, internal portals, and more.</code></pre>
+                        <div id="file" class="use-case-content">
+                            <h3 class="text-xl font-semibold text-white mb-2">The `sig.json` Explained</h3>
+                            <p class="text-zinc-400 mb-4">This simple, public file contains everything needed for verification. It's hosted at `/.well-known/sig.json` on your domain.</p>
+                            <pre class="code-block"><code>{
+  <span class="text-gray-500">// Public key from the site's DV cert (Let's Encrypt)</span>
+  "dvPublicKey": "...", 
+  
+  <span class="text-gray-500">// Public key from the government-issued p12</span>
+  "govPublicKey": "...",
+
+  <span class="text-gray-500">// The signature, proving the holder of the gov key
+  // vouches for the domain key.</span>
+  "signature": "..." 
+}</code></pre>
                         </div>
                     </div>
                 </div>
@@ -347,39 +416,31 @@ users:
                 <div class="space-y-4" id="faq-accordion">
                     <div class="faq-item glass-panel">
                         <button class="faq-item-toggle flex w-full items-center justify-between p-6 text-left">
-                            <span class="text-lg font-medium text-white">What happens if I lose my phone?</span>
+                            <span class="text-lg font-medium text-white">Will my company name appear in the browser padlock?</span>
                             <svg class="faq-chevron h-6 w-6 flex-shrink-0 text-zinc-400 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
                         </button>
-                        <div class="faq-item-content"><div class="px-6 pb-6 text-zinc-400">Your certificates can be easily revoked from your 1cert dashboard. Since the private keys never leave your phone, a lost device does not mean a compromised key. You can then provision a new certificate on your new device.</div></div>
+                        <div class="faq-item-content"><div class="px-6 pb-6 text-zinc-400">No, not directly. This is the main trade-off. Browsers will show a standard padlock for a Domain Validated (DV) certificate. This method provides *verifiable proof* for users and automated services that choose to check, but it doesn't change the browser's native UI.</div></div>
                     </div>
                      <div class="faq-item glass-panel">
                         <button class="faq-item-toggle flex w-full items-center justify-between p-6 text-left">
-                            <span class="text-lg font-medium text-white">Does the target server need to change anything?</span>
+                            <span class="text-lg font-medium text-white">Where do I get a "government-issued p12"?</span>
                             <svg class="faq-chevron h-6 w-6 flex-shrink-0 text-zinc-400 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
                         </button>
-                        <div class="faq-item-content"><div class="px-6 pb-6 text-zinc-400">No. Unlinke current solutions that use short lived certs that require the server to accept a signature by a 3rd party CA, only the client (the user who need to authenticate) needs to have 1cert's lightweight daemon installed. </div></div>
+                        <div class="faq-item-content"><div class="px-6 pb-6 text-zinc-400">In many countries, when you register a business, you're issued a digital certificate (often a .p12 or .pfx file) that acts as your company's official digital identity. This is used for filing taxes, signing documents, etc. This is the key we help you leverage.</div></div>
                     </div>
                      <div class="faq-item glass-panel">
                         <button class="faq-item-toggle flex w-full items-center justify-between p-6 text-left">
-                            <span class="text-lg font-medium text-white">Can I use this with my existing government/corporate certificates?</span>
+                            <span class="text-lg font-medium text-white">How is this different than just listing my company name?</span>
                             <svg class="faq-chevron h-6 w-6 flex-shrink-0 text-zinc-400 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
                         </button>
-                        <div class="faq-item-content"><div class="px-6 pb-6 text-zinc-400">Yes. This is directly related to the previous question. 1cert works with any existing X.509 client certificate (.p12, .pfx files). Whether it's your government-issued certificate for tax portals, corporate certificates for internal systems, or banking certificates—just import them into the 1cert app and start using them securely. </div></div>
+                        <div class="faq-item-content"><div class="px-6 pb-6 text-zinc-400">Anyone can write a name on a website. This method provides cryptographic proof that the legal entity holding the government certificate also controls the domain's encryption keys. It's a mathematical link that cannot be forged, not just a claim.</div></div>
                     </div>
                     <div class="faq-item glass-panel">
                         <button class="faq-item-toggle flex w-full items-center justify-between p-6 text-left">
-                            <span class="text-lg font-medium text-white">How is this more secure?</span>
+                            <span class="text-lg font-medium text-white">What happens when my Let's Encrypt cert renews?</span>
                             <svg class="faq-chevron h-6 w-6 flex-shrink-0 text-zinc-400 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
                         </button>
-                        <div class="faq-item-content"><div class="px-6 pb-6 text-zinc-400">Traditional certificate files stored on a developer's laptop can be stolen by malware. With 1cert, the private key is stored inside your phone's Secure Enclave or hardware-backed keystore. It can't be exported or accessed by the OS, making it dramatically more secure and phishing-resistant.</div></div>
-                    </div>
-                 
-                    <div class="faq-item glass-panel">
-                        <button class="faq-item-toggle flex w-full items-center justify-between p-6 text-left">
-                            <span class="text-lg font-medium text-white">What platforms are supported?</span>
-                            <svg class="faq-chevron h-6 w-6 flex-shrink-0 text-zinc-400 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
-                        </button>
-                        <div class="faq-item-content"><div class="px-6 pb-6 text-zinc-400">The 1cert mobile app will be available for both iOS and Android. The client-side proxy tool is a cross-platform binary that runs on macOS, Windows, and Linux.</div></div>
+                        <div class="faq-item-content"><div class="px-6 pb-6 text-zinc-400">You simply re-run the `1cert-cli sign` command. Our tool can be integrated into your existing ACME client's (e.g., certbot's) renewal hooks to automate this process, ensuring your `sig.json` is always up to date.</div></div>
                     </div>
                 </div>
             </div>
