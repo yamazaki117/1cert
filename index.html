@@ -442,6 +442,13 @@ $ 1cert-cli sign \
                         </button>
                         <div class="faq-item-content"><div class="px-6 pb-6 text-zinc-400">You simply re-run the `1cert-cli sign` command. Our tool can be integrated into your existing ACME client's (e.g., certbot's) renewal hooks to automate this process, ensuring your `sig.json` is always up to date.</div></div>
                     </div>
+                    <div class="faq-item glass-panel">
+                        <button class="faq-item-toggle flex w-full items-center justify-between p-6 text-left">
+                            <span class="text-lg font-medium text-white">What happens if I transfer my domain?</span>
+                            <svg class="faq-chevron h-6 w-6 flex-shrink-0 text-zinc-400 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+                        </button>
+                        <div class="faq-item-content"><div class="px-6 pb-6 text-zinc-400">The new owner will NOT be able to reuse the `sig.json` file you were using, even though it was public, because it binds to the public part of the DV SSL cert. Since his DV cert will be different, he will have to create a new `sig.json` for his domain with his p12, meaning he won't be able to impersonate your organization</div></div>
+                    </div>
                 </div>
             </div>
         </section>
